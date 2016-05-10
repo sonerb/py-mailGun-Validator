@@ -1,0 +1,10 @@
+email@example.com
+firstname.lastname@example.com
+email@subdomain.example.com
+plainaddress
+#@%^%#$@#$@#.com
+@example.com
+email@example.museum
+email@example.co.jp
+Joe Smith <email@example.com>
+email.example.com
