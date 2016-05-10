@@ -87,7 +87,6 @@ class mailGun(object):
         result =  requests.get("https://api.mailgun.net/v3/address/validate",
         auth=("api", self.api_key),
         params={"address": '{}'.format(mail)})
-        #self.file.write('{}\n\n'.format(result.text))
         if result.status_code == 401:
             print('401 Unauthorized - No valid API key provided')
             return
