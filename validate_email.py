@@ -14,7 +14,7 @@ class mailGun(object):
         self.th                  = []
         self.control             = True
         self.s_time              = time.time()
-        self.api_key             = 'pubkey-5ogiflzbnjrljiky49qxsiozqef5jxp7'
+        self.api_key             = 'pubkey-f4848c522e81e7dab90d392aba543170'
 
         if mail_list is not None:
             self.mail_list = mail_list
@@ -54,10 +54,13 @@ class mailGun(object):
                 finfo = os.stat(self.mail_list_validated)
                 if finfo.st_size > 0:
                     while(1):
-                        decision = input('{} file will reset. Do you want continue? (Yes/No) : '.format(self.mail_list_validated))
-                        if decision.lower() == 'n' or decision.lower() == 'no':
+                    	if sys.version_info < (3, 0):
+                        	decision = raw_input('{} file will reset. Do you want continue? (Yes/No) : '.format(self.mail_list_validated))
+                        else:
+                        	decision = input('{} file will reset. Do you want continue? (Yes/No) : '.format(self.mail_list_validated))
+                        if str(decision).lower() == 'n' or str(decision).lower() == 'no':
                             sys.exit()
-                        elif decision.lower() == 'y' or decision.lower() == 'yes':
+                        elif str(decision).lower() == 'y' or str(decision).lower() == 'yes':
                             break
                         else:
                             print('Unknown Command!')
